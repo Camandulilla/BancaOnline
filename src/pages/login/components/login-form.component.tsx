@@ -1,11 +1,12 @@
 import React from "react";
 import {
   Credentials,
-  CredentialsFromErrors,
+  CredentialsFormErrors,
   createEmptyCredentials,
   createEmptyCredentialsFormErrors,
 } from "../login.vm";
 import { validateForm } from "../login.validation";
+import classes from "./login-form.component.module.css";
 
 interface Props {
   onLogin: (credentials: Credentials) => void;
@@ -17,7 +18,7 @@ export const LoginFormComponent: React.FC<Props> = (props) => {
     createEmptyCredentials()
   );
 
-  const [errors, setErrors] = React.useState<CredentialsFromErrors>(
+  const [errors, setErrors] = React.useState<CredentialsFormErrors>(
     createEmptyCredentialsFormErrors()
   );
 
@@ -39,28 +40,32 @@ export const LoginFormComponent: React.FC<Props> = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={classes.form}>
       <div>
-        <label htmlFor="username">Usuario</label>
         <input
           type="text"
           id="username"
           name="user" //coincide con el nombre que hemos asignado en el view model
           onChange={handleFieldChange}
+          placeholder="Usuario"
+          className={errors.user ? classes.inputError : ""}
         />
-        {errors.user && <p>{errors.user}</p>}
+        {errors.user && <p className={classes.error}>{errors.user}</p>}
       </div>
       <div>
-        <label htmlFor="password">Contraseña</label>
         <input
           type="text"
           id="password"
           name="password" //coincide con el nombre que hemos asignado en el view model
           onChange={handleFieldChange}
+          placeholder="Clave"
+          className={errors.password ? classes.inputError : ""}
         />
-        {errors.password && <p>{errors.password}</p>}
+        {errors.password && <p className={classes.error}>{errors.password}</p>}
       </div>
-      <button type="submit">Acceder</button>
+      <button type="submit" className={classes.btnEnviar}>
+        Acceder
+      </button>
     </form>
   );
 };

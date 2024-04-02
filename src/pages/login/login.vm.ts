@@ -8,12 +8,12 @@ export const createEmptyCredentials = (): Credentials => ({
   password: "",
 });
 
-export interface CredentialsFromErrors {
+export interface CredentialsFormErrors {
   user: string;
   password: string;
 }
 
-export const createEmptyCredentialsFormErrors = (): CredentialsFromErrors => ({
+export const createEmptyCredentialsFormErrors = (): CredentialsFormErrors => ({
   user: "",
   password: "",
 });

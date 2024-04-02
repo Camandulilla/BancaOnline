@@ -1,15 +1,15 @@
 import {
-  CredentialsFromErrors,
+  CredentialsFormErrors,
   createEmptyCredentialsFormErrors,
 } from "./login.vm";
 
 interface ValidationResult {
   succeeded: boolean;
-  errors: CredentialsFromErrors;
+  errors: CredentialsFormErrors;
 }
 
 export const validateForm = (
-  credentials: CredentialsFromErrors
+  credentials: CredentialsFormErrors
 ): ValidationResult => {
   let validationResult: ValidationResult = {
     succeeded: true,
@@ -21,6 +21,8 @@ export const validateForm = (
       ...validationResult.errors,
       user: "Debe informar el campo usuario",
     };
+
+    validationResult.succeeded = false;
   }
 
   if (!credentials.password.trim()) {
@@ -28,6 +30,8 @@ export const validateForm = (
       ...validationResult.errors,
       password: "Debe informar el campo password",
     };
+
+    validationResult.succeeded = false;
   }
 
   return validationResult;
