@@ -5,6 +5,7 @@ import classes from "./account-list.page.module.css";
 import { AccountListTableComponent } from "./components";
 import { getAccountList } from "./api";
 import { mapAccountListFromApiToVm } from "./account-list.mapper";
+import AddAccountPage from "./components/account-list-add-account.component";
 
 export const AccountListPage: React.FC = () => {
   const [accountList, setAccountList] = React.useState<AccountVm[]>([]);
@@ -20,7 +21,7 @@ export const AccountListPage: React.FC = () => {
       <div className={classes.root}>
         <div className={classes.headerContainer}>
           <h1>Mis cuentas</h1>
-          <button>AGREGAR NUEVA CUENTA</button>
+          <AddAccountPage />
         </div>
         <AccountListTableComponent accountList={accountList} />
       </div>

@@ -23,6 +23,22 @@
       "name": "Ahorro",
       "balance": 8500,
       "lastTransaction": "2019-11-15T08:29:04"
+    },
+    {
+      "iban": "RO54 LJMH 852U U585 73V9 576O",
+      "name": "prueba",
+      "type": "1",
+      "balance": 0,
+      "lastTransaction": "2024-04-11T14:36:02.598Z",
+      "id": "YJNNUen"
+    },
+    {
+      "iban": "LB37 3011 S469 B522 5361 L786 WBU0",
+      "name": "Ojalata",
+      "type": "1",
+      "balance": 0,
+      "lastTransaction": "2024-04-11T14:37:43.735Z",
+      "id": "Nrmemvn"
     }
   ],
   "movements": [

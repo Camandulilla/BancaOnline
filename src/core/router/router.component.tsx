@@ -2,11 +2,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { appRoutes } from "./routes";
 import {
   AccountListPage,
-  AccountPage,
   LoginPage,
   MovementListPage,
   TransferPage,
 } from "@/pages";
+import { CreateAccountPage } from "@/pages/create-account";
 
 export const Router = () => {
   return (
@@ -14,7 +14,7 @@ export const Router = () => {
       <Routes>
         <Route path={appRoutes.root} element={<LoginPage />} />
         <Route path={appRoutes.accountList} element={<AccountListPage />} />
-        <Route path={appRoutes.editAccount} element={<AccountPage />} />
+        <Route path={appRoutes.editAccount} element={<CreateAccountPage />} />
         <Route path={appRoutes.movements} element={<MovementListPage />} />
         <Route path={appRoutes.transfer} element={<TransferPage />} />
         <Route
